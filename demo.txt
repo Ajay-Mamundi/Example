@@ -1,4 +1,1 @@
-new file fffff
-i am the owner
-editing inside the github
-added new branch
+event-management-frontend/ ├── .angular/ ├── node_modules/ ├── src/ │ ├── app/ │ │ ├── auth/ │ │ │ ├── login/ │ │ │ │ ├── login.component.ts │ │ │ │ ├── login.component.html │ │ │ │ └── login.component.css │ │ │ └── register/ │ │ │ ├── register.component.ts <-- your register.component.ts │ ├── register.component.html └── register.component.css events event-details event-form event-list feedback feedback-list guards auth.guard.ts <-- home interceptors auth.interceptor.ts models event.model.ts feedback.model.ts ticket.model.ts user.model.ts services auth.service.ts event.service.ts feedback.service.ts ticket.service.ts shared navbar tickets my-tickets my-tickets.component.ts my-tickets.component.html my-tickets.component.css ticket-booking ticket-booking.component.ts ticket-booking.component.html ticket-booking.component.css app.component.ts app.component.html app.component.css app.module.ts app-routing.module.ts assets environments favicon.ico index.html main.ts polyfills.ts styles.css test.ts angular.json package.json tsconfig.jso < body>
