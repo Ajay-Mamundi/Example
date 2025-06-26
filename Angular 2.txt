@@ -1,0 +1,202 @@
+Angular
+=======
+
+-->npm install - g @angular/cli
+
+-->ng new project //Initialize new project
+
+-->cd my-app
+
+-->ng serve -o (or) ng serve --open //automatically open page in browser 
+
+-->ng serve --port=1232
+
+-->ng generate component login (or) ng g c demo//Create Components
+
+
+angular.json		->angular config
+package.json		->run panra script we have
+package-lock.json	->it have more details
+tsconfig.json		->
+tsconfig.app.json	->in inside we extends the tscongig.json file,files and include(declaration file) is important
+tsconfig.spec.json	->for testing
+editor.config		->it helps maintain consistent coding styles for multiple user(tab)
+ng serve vs ng build
+
+-->compile the angular application and run the server
+
+-->Compiles and optimizes the Angular app into static files and also Saves output to the /dist folder
+
+Angular latest version:18
+------------------------------------------------------------------------------------------------------------------------------------------------------------	
+What is SPA?
+A Single Page Application (SPA) is a web application that loads a single HTML page and dynamically updates content without reloading the page.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Angular?
+Angular is a front-end framework developed by Google, it is used to create dynamic and scalable Single Page Applications (SPAs). It is built using TypeScript (TS) which enhances code maintainability and provides powerful features like static typing. Angular follows a component-based architecture then also we have two-way data binding,dependency injection.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Angular JS?
+AngularJS is a JavaScript-based framework developed by Google, it is used to create dynamic and single page application. it is support only JavaScript. which is dynamic type. Angular JS follows MVC architecture. then in angular js we have some dowbacks so that the reason only angular came into the picture.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Angular js			 		Angular
+it support only javascript 		it support both javascript and typescript
+it follow the mvc architecture 		it follow the component based architecture.
+it does not have cli tools 		it has cli tools
+it does not use the dependency injection it uses dependency injection
+it is slow				it is fast
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+How many types of compilation Angular provides?
+	Angular provides two types of compilation
+	-JIT (Just-in-Time) Compilation(run time)
+	-AOT (Ahead-of-Time) Compilation(compile time)
+In JIT compilation, the application compiles inside the browser during runtime.
+AOT compilation, the application compiles during the build time.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is a component in Angular?
+A component is a fundamental building block of Angular applications. Components are used to create reusable UI elements.
+in component inside we have
+@Component({--->decator
+    selector: 'app-header',-->Defines the component's custom HTML tag
+    templateUrl: './header.component.html',-->Links the component to its HTML file
+    styleUrls: ['./header.component.css']-->Defines the component's CSS files.
+})
+@Component decorator in Angular?
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Template?
+A Template in Angular is an HTML file. inside we have
+-->Data Binding: ({{ }}) to dynamically display values.
+-->Directives: (*ngIf, *ngFor) to control UI behavior.
+-->Events: ((click)) for user interaction.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+what is Transpiler?
+A Transpiler (short for "translator + compiler") is a tool that converts code from one programming language.
+Since browsers cannot understand TypeScript directly, we need to convert TypeScript to JavaScript using a transpiler like TypeScript Compiler (tsc) or Babel.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Angular CLI?
+Angular CLI (Command Line Interface) is a powerful tool that helps automate and streamline the development process for Angular applications. It provides a set of commands for creating, managing, and building Angular projects.
+	ng new-->Creates a new Angular project.
+	ng serve-->Serves the application locally.
+	ng generate-->Generates components, services, and more.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Data binding in Angular is a mechanism that allows communication between the component and the view. It synchronizes the data between the model (component) and the view, basically It helps dynamically update the UI based on changes in the data.
+Types of Data Binding
+=====================
+Interpolation ({{ }})-->Displays dynamic values inside HTML
+Property Binding ([property] )-->Binds values to HTML attributes
+Event Binding ((event) )-->Listens to user actions like clicks
+Two-Way Binding ([(ngModel)])-->Syncs data between the component and input fields instantly.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+what is interpolation angular?
+==============================
+-->Interpolation in Angular is a one-way data-binding technique.
+-->it is used to bind data from the component to the HTML template using double curly braces ({{ }}).
+-->Displays dynamic values inside HTML
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Property Binding
+================
+-->Property Binding is a one-way data-binding technique.
+-->that allows you to dynamically set properties of HTML elements using component data.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Event Binding
+=============
+-->Property Binding is a one-way data-binding technique.
+-->event binding is used to handle the events raised by the user actions like button click, mouse movement, keystrokes
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Two-Way Binding
+===============
+-->Two-Way Binding in Angular synchronizes data both ways—from the component (TypeScript) to the view (HTML)
+-->Any changes made in the UI automatically update the component, and changes in the component update the UI
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What are Angular Guards?
+------------------------
+-->Auth Guards in Angular are used to protect routes by controlling access based on authentication and authorization.
+Common types of guards include: CanActivate(Determines if a route can be activated),CanDeactivate,CanLoad.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+what is form in angular?
+------------------------
+a form is a structured way to handle user input and validation.
+ There are 2 ways to create forms in Angular 
+1. Template Driven Forms 
+2. Reactive Forms (Also called Model Driven Forms)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+directives in angular
+->directives are classes that enhance HTML elements with additional behavior or transform the DOM
+There are 3types of Directives
+->structural(modify dom struture)*ngFor,*nfIf
+->attritubes(change the appreance)[ngclass],[ngstyle]
+->component(with template)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Services In angular
+->Used for business logic and reusable functions, often injected into components.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+what is pipe?
+In angular transform the data. Angular provides built-in pipes like uppercase, date, and currency. Without affecting the original values
+	DatePipe: Formats a date value.
+	UpperCasePipe: Transforms text to uppercase.
+	LowerCasePipe: Transforms text to lowercase.
+	CurrencyPipe: Transforms a number to the currency string.
+	PercentPipe: Transforms a number to the percentage string. 
+	DecimalPipe: Transforms a number into a decimal point string.
+
+pipes in angular
+->transform the data into template 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ECMAScript			JavaScript
+Specification			Implementation
+standardization of JavaScript 	A scripting language based on ECMAScript
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ES6
+===
+6th version of the ECMAScript programming language. ECMAScript is the standardization of JavaScript
+They introced the the
+1.arrow function
+2.let
+3.const
+4.class
+5.Classes
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is bable?
+Babel is a specialized JavaScript transpiler that converts modern ES6+ code into older ES5 code.
+------------------------------------------------------------------------------------------------------------------------------------------------------------<router-<router-outlet>
+it acts as a placeholder where dynamically loaded components based on route
+------------------------------------------------------------------------------------------------------------------------------------------------------------<
+What is HTTPclient?
+-------------------
+->In angular httpclient is build-in service used to make HTTP request to communicate with backend or API.
+->The httpclient methods likes(GET,POST,PUT,DELETE).//	
+------------------------------------------------------------------------------------------------------------------------------------------------------------<
+What is Observable?
+In observable is way to manage asynchrous data streams in angular.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Rxjs?
+->Rxjs(Reactive Extenstion js) is the thrid party library
+->if want to use this Observables i need Rxjs
+->It helps manage asynchronous data streams
+------------------------------------------------------------------------------------------------------------------------------------------------------------\
+both are used for handling asynchronous operations, but they have key difference3
+	promise(single value)			observable(multiple value)
+Promise handle the single asynchronous operation observable handle the multiple asynchronous operation
+eager Execution				Lazy Execution
+Cannot be canceled once started.	Can be canceled using .unsubscribe()
+there no-operators			it have operator(map,filter,merge)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is LazyLoading?
+lazyloading is the design pattern in programming where resources or data are loaded only when they are needed, rather than at initial load time.
+for eg.(Before, when a user entered the website, all content was loaded at once, which slowed down the application. so that the reason came into the picture)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+How to run angular app with different port number?
+ng serve --port 4300
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+can I create a Component without spec file? if so then How to create?
+ng g c component-name --skip-tests
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+@Inject Decorator
+	->Manually injects dependencies into a class.
+	->Typically used inside a constructor to provide instances of services.
+@Component Decorator
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Lifecycle Phases of an Angular Component
+1.Creation Phase-->ngOnChanges(),ngOnInit()
+2.Change Detection Phase-->ngDoCheck(),ngAfterContentInit(),ngAfterViewInit(),ngAfterViewChecked() 
+3.Destroy Phase-->ngOnDestroy()
