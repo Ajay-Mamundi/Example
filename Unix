@@ -1,1 +1,322 @@
+what is unix operating system?
+  -As compared to windows os highly secured and data protection.
+  -Unix is an operating system. 
+  -The kernel is the base of the operating system.
+  -it act as the bridge between the hardware and software.
+  -it is a command line user interface os.
+  -The kernel is responsible for managing critical tasks such as memory management, file systems, process control, and device communication.
 
+disadvantage
+   -complex design
+   -os is not user friendly.
+   
+
+key features of UNIX
+ -Open source and Free-> allows users to view, modify and distribute its source code freely.
+
+ -Multiuser and multitasking->They allow several users to access system resources simultaneously and run multiple tasks concurrently without interference.
+
+ -portability->it can run on any hardware architectures due to their implementation in C.
+
+ -hierarchical File system->file system that organizes files and directories under a single root directory. This structure simplifies file management and access
+ - Command-Line Interface (CLI)->enabling users to execute commands, automate tasks, and manage systems efficiently. This feature is highly valued by developers and system administrators.
+
+Commands of Unix------------------------------------------------------------------------------------
+  
+File and directory Management---
+->ls- List files and directories
+   -> -l>list show permissions,owner,size,date
+   -> -a>includes hidden file(starting with(.))
+   -> -h>Human readable file sizs(used with(-l))
+   -> -R>Lists subdirectories
+   -> -t>Sorts by modification time
+   -> -S>Sorts by file size
+
+->cd-change directory
+   ->
+   ->cd .. ->Moves up one level to the parent directory
+   ->cd /  ->Goes to the root directory
+   ->cd ~  ->Goes to your home directory
+   ->cd -  ->Switches to the previous directory you were in
+   ->cd /path/to/folder	->Goes directly to a specific folder
+
+->pwd- this command tells that exactly where your in the file hierarchy or it displays the absolute path of the directory
+
+->mkdir -creates the new directory
+
+   ->mkdir folder_name     ->Creates the named folder
+   ->mkdir folder2 folder3 -> Creeates multiple folders
+   ->mkdir -p a/b/c        ->Creates nested folders,including parents
+   ->mkdir -p existing_folder ->Avoids error if folder already exists
+
+->rmdir - delete the empty directory
+
+     ->rmdir folder ->Removes an empty folder
+     ->rmdir --ignore-fail-on-non-empty folder->Suppresses error if folder isn't empty
+     ->rmdir --parents a/b/c ->Removes nested empty folders up the path
+
+->rm -remove the files or directory
+
+    ->rm file.txt	>Deletes a file
+    ->rm -r folder	>Deletes a folder and its contents
+    ->rm -f file.txt	>Force deletes a file without confirmation
+    ->rm -rf folder	>Force deletes a folder and everything inside
+
+->cp -(copy)-it allows you to duplicate the files and directories from one location to another
+      
+     ->cp file1.txt file2.txt	        >Copies a file
+     ->cp file.txt /path/	        >Copies file to another directory
+     ->cp -r folder1 folder2	        >Copies a directory and its contents
+     ->cp -i file.txt /path/	        >Prompts before overwriting
+     ->cp -u file.txt /path/	        >Copies only if source is newer
+     ->cp -v file.txt /path/	        >Shows progress of copying
+
+->mv -(move) -move or rename the files
+       
+      ->mv old.txt new.txt	>Renames a file
+      ->mv file.txt /path/	>Moves file to another directory
+      ->mv folder/ /path/	>Moves a folder
+      ->mv -i file.txt /path/	>Prompts before overwriting
+      ->mv -v file.txt /path/	>Shows progress of move
+
+
+->touch -to create the new file or update the time stamp
+      
+        ->touch file.txt	                Creates an empty file or updates timestamp
+        ->touch file1 file2	                Creates multiple files
+        ->touch -c file.txt	                Updates timestamp only if file exists
+        ->touch -t 202510091230 file.txt	Sets a custom timestamp
+
+---------->File viewing commands<----------------------------------------
+
+->cat-concatenate- View the contents of a file, Combine multiple files into one.
+      
+->cat file.txt	                        >Displays file content                                            
+->cat file1 file2	                >Displays multiple files
+->cat > newfile.txt	                >Creates a new file with typed input
+->cat file1 file2 > combined.txt	>Combines files into one
+->cat -n file.txt	                >Shows file with line numbers
+       
+
+-n	Number all output lines
+-b	Number non-blank lines only
+-s	Suppress repeated empty lines
+-E	Show $ at end of each line
+-T	Show tabs as ^I
+
+
+->more-The more command lets you read the contents of a file page by page. 
+       It pauses after each screenful of text, allowing you to scroll through the file interactively.
+
+->less is a file pager — it lets you view the contents of a file one screen at a time, just like more, but with extra features:
+
+     You can scroll backward and forward
+
+     You can search within the file
+
+     It’s non-destructive — it doesn’t modify the file
+
+->head-The head command displays the first few lines of a file. By default, it shows the first 10 lines, but you can customize this using options.
+     
+      ->head file.txt	        >Shows first 10 lines of a file
+      ->head -n 5 file.txt	>Shows first 5 lines
+      ->head -c 100 file.txt	>Shows first 100 bytes
+      ->head file1 file2	>Shows first 10 lines of multiple files
+      ->head -q file1 file2	>Suppresses file headers
+
+->tail-The tail command displays the last few lines of a file. By default, it shows the last 10 lines,
+
+         ->tail file.txt	        >Shows last 10 lines of a file
+         ->tail -n 5 file.txt	        >Shows last 5 lines
+         ->tail -c 100 file.txt	        >Shows last 100 bytes
+         ->tail -f file.txt	        >Follows file updates in real-time
+         ->tail file1 file2	        >Shows last lines of multiple files
+         ->tail -q file1 file2	        >Suppresses file headers
+
+----------------------------------------Fill permission---------------------------------------
+
+->chmod-(change mod)-It modifies the permissions of a file or directory,Read it, Write (modify) it, Execute (run) it.
+         
+           
+Value	Binary	Owner Permissions	Meaning
+
+0	000	---	                No permissions
+1	001	--x	                Execute only
+2	010	-w-	                Write only
+3	011	-wx	                Write and execute
+4	100	r--	                Read only
+5	101	r-x	                Read and execute
+6	110	rw-	                Read and write
+7	111	rwx	                Full access: read, write, execute
+
+
+->chmod 755 file.txt	>Sets read/write/execute for owner, read/execute for others
+->chmod u+x file.txt	>Adds execute permission for owner
+->chmod g-w file.txt	>Removes write permission from group
+->chmod -R 644 folder/	>Recursively sets permissions for all files
+
+
+->chown-(change owner)-a powerful tool in Unix-like systems (Linux, macOS) used to change the ownership of files and directories.
+
+    ->chown alice file.txt	Changes owner to alice
+    ->chown :staff file.txt	Changes group to staff
+    ->chown alice:staff file.txt	Changes both owner and group
+    ->chown -R bob:dev /project/	Recursively changes ownership in a directory
+
+
+---------------------------------------Process management-----------------------------------------------------------------------------------------------------------
+
+->ps-(process status)-it shows you the list of all the programs which are running in your computer.
+
+        ->ps aux   >a=show processes for all users, not just you
+                   >u=show the user who started the process
+                   >x=Show processes not attached to a terminal (background tasks)
+
+
+USER       PID  %CPU %MEM COMMAND
+root         1   0.0  0.1 /sbin/init
+alice     1234   1.2  3.5 /usr/bin/python3 script.py
+
+
+
+USER	Who started the process
+PID	Process ID (a unique number)
+%CPU	How much CPU it’s using
+%MEM	How much memory it’s using
+COMMAND	What program is running
+
+
+         ->ps	        >Shows your current terminal’s processes
+         ->ps aux	>Shows all running processes in detail
+         ->ps -ef	>Shows all processes in full format
+         ->ps -u alice	>Shows processes started by user "alice"
+         ->ps -ef --forest	>Shows all processes in a tree view
+
+->top-It’s one of the most powerful tools in Unix-like systems (Linux, macOS) for monitoring system activity in real time.
+
+          ->top	         >Shows live system activity
+          ->top -u alice >Shows Alice’s processes only
+          ->top -d 5	 >Refreshes every 5 seconds
+          ->top -p 1234	 >Monitors process with ID 1234
+
+
+->kill-It tells the computer to end a process.
+
+    ->kill 1234	Sends a default signal to stop process 1234
+    ->kill -9 1234	Forcefully kills process 1234 (no mercy!)
+    ->kill -15 1234	Politely asks process 1234 to stop
+
+      -9 is like saying “Stop right now!” 
+      -15 is like saying “Please stop when you’re ready.”
+
+->killall-Stop the process in a single command
+     
+       ->killall firefox	>Stops all Firefox processes
+       ->killall -i firefox	>Asks before stopping each one
+       ->killall -u alice	>Stops all processes started by user "alice"
+       ->killall -v firefox	>Shows what’s being stopped
+
+
+->whoami-whoami is a simple command in Unix-like systems (Linux, macOS) that tells you which user account you’re currently using in the terminal.
+
+->id- >it displays user id and the group id
+      >and also check check the another user id and the group id.
+
+->passwd-to change the password of a user account.
+
+
+        ->passwd	        >Change current user’s password
+        ->sudo passwd bob	>Change another user’s password (admin)
+        ->passwd -l bob	        >Lock Bob’s account
+        ->passwd -u bob	        >Unlock Bob’s account
+
+
+->sudo-Execute commands as another user (usually root).
+Example: sudo apt update
+
+--------------------------------------------------------------------other important commands--------------------------------------------------------------
+
+->history-displays a list of previously executed commands in the current shell session.
+      
+         history -c	Clears the current session’s history
+         history -w     writes the current history to the histpry file
+         history -r     reads history from the history file
+
+->clear >clear the terminal screen 
+        >removing all previous output and giving you a fresh, empty view.
+
+
+->echo-displays the text or variables in the terminal.
+
+     ->echo "Hello"	>Prints "Hello"
+     ->echo -n "Hi"	>Prints "Hi" without newline
+     ->echo -e "A\nB"	>Prints A and B on separate lines
+     ->echo $USER	>Prints the current username (variable)
+     ->echo "Done" > file.txt	>Writes "Done" to a file
+
+
+->date-shows the date of the system
+
+     ->date	                >Shows current date and time
+     ->date +"%Y-%m-%d"	        >Custom format: Year-Month-Day
+     ->date +"%A %H:%M"	        >Day of week and time
+     ->sudo date 101016492025	>Sets system date/time (admin only)
+
+
+->man-man stands for manual. It displays the manual page (or man page) for a given command, utility, or system function. These pages contain detailed documentation including:
+
+What the command does
+
+How to use it
+
+Available options and flags
+
+Examples
+
+Related commands
+-----------------------------------------------------------------------------------just to know------------------------------------------------------
+
+-->Archiving and Compression
+
+tar - Archive files.
+Example: tar -cvf archive.tar folder/
+gzip - Compress files.
+Example: gzip file.txt
+gunzip - Decompress .gz files.
+Example: gunzip file.txt.gz
+find - Search for files and directories.
+Example: find /path -name "*.txt"
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+->Networking
+
+ping - Test network connectivity.
+Example: ping google.com
+ifconfig - Display or configure network interfaces.
+Example: ifconfig eth0
+wget - Download files from the internet.
+Example: wget http://example.com/file.zip
+scp - Securely copy files between systems.
+Example: scp file.txt user@remote:/path/to/destination
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+->Disk and System Information
+
+df - Display disk space usage.
+Example: df -h (human-readable format)
+du - Display directory or file size.
+Example: du -sh folder/
+free - Display memory usage.
+Example: free -h (human-readable format)
+uname - Display system information.
+Example: uname -a
+uptime - Show system uptime.
+who - Show logged-in users.
+
+
+
+
+**************************************************************************************************************************************************************************
+  
